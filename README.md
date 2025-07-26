@@ -7,7 +7,7 @@ My goal was to make the code self-documenting. But, in case it is not, here are 
 
 ## Start: Main.py contains an example usage.. 
 The basic set up of this framework is as seen by the main.py file.. 
-
+``
   NN = Network(learning_rate=.01) ~ Initialize your network.
   NN.add_input_layer(X_train_std) ~ Add A0 (input layer w/ samples)
   NN.add_hidden_layer(X_train_std.shape[1], 13, "relu") --- (Hidden Layer #1)
@@ -16,7 +16,7 @@ The basic set up of this framework is as seen by the main.py file..
   NN.add_hidden_layer(11, 10, "relu")  --- (Hidden Layer #2)
   NN.add_output_layer(10, 10, y_train, True, "softmax")   --- (Output Layer)
   NN.add_loss("negative_log_loss", y_train)  --- (Loss)
-
+``
 ## Some important notes about the current state of this library.. 
 #1. You must add a input layer prior to any hidden layers. 
 #2. You can add as many hidden layers as you want, ensure that features_in of l match the features_out of l-1. 
