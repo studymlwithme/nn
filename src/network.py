@@ -110,18 +110,13 @@ class Network:
                 bias_jac = curr_error * 1
                 curr_layer.biases -= self.learning_rate * np.average(bias_jac, axis=0)
             if curr_layer.weights is not None:
-                #print(f"Curr Layer Derivative: {curr_layer.derivative} \n Curr Layer Activations: {curr_layer.neurons} \n Curr Layer Weights: {curr_layer.weights.T} \n Curr Layer Biases:  {curr_layer.biases.T} \n curr_error.shape {curr_error.shape} curr_layer.neurons.shape {curr_layer.neurons.shape} curr_layer.weights.shape {curr_layer.weights.shape}  ")
                 weight_jac =  curr_layer.prev.neurons.T @ curr_error / curr_error.shape[0]# TODO ensure this is being broadcast across the correct axis
                 print(f"Current Error: {curr_error} | Current Layer Activations: {curr_layer.prev.neurons.shape} Current Layer Weights: {curr_layer.weights.shape}")
                 
                 curr_error =  curr_error @  curr_layer.weights.T
-                print(f"Current Error2: {curr_error}")
                 curr_layer.weights -= self.learning_rate * weight_jac
-                # TODO: Sum & Divide
-                 #Getting error here..
             if curr_layer.prev.derivative is not None:
                 curr_error = curr_error * curr_layer.prev.derivative
-                print(f"Current Error3: {curr_error}")
             curr_layer = curr_layer.prev
 
 
