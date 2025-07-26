@@ -7,6 +7,7 @@ My goal was to make the code self-documenting. But, in case it is not, here are 
 
 ## Start: Main.py contains an example usage.. 
 The basic set up of this framework is as seen by the main.py file.. 
+
 ``
   NN = Network(learning_rate=.01) ~ Initialize your network.
   
