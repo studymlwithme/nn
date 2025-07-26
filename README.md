@@ -9,13 +9,21 @@ My goal was to make the code self-documenting. But, in case it is not, here are 
 The basic set up of this framework is as seen by the main.py file.. 
 ``
   NN = Network(learning_rate=.01) ~ Initialize your network.
+  
   NN.add_input_layer(X_train_std) ~ Add A0 (input layer w/ samples)
+  
   NN.add_hidden_layer(X_train_std.shape[1], 13, "relu") --- (Hidden Layer #1)
+  
   NN.add_hidden_layer(13, 12, "relu")  --- (Hidden Layer #2)
+  
   NN.add_hidden_layer(12, 11, "relu")  --- (Hidden Layer #2)
+  
   NN.add_hidden_layer(11, 10, "relu")  --- (Hidden Layer #2)
+  
   NN.add_output_layer(10, 10, y_train, True, "softmax")   --- (Output Layer)
+  
   NN.add_loss("negative_log_loss", y_train)  --- (Loss)
+  
 ``
 ## Some important notes about the current state of this library.. 
 #1. You must add a input layer prior to any hidden layers. 
