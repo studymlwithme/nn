@@ -29,10 +29,10 @@ The basic set up of this framework is as seen by the main.py file..
 
 
 ## Some important notes about the current state of this library.. 
-#1. You must add a input layer prior to any hidden layers. 
-#2. You can add as many hidden layers as you want, ensure that features_in of l match the features_out of l-1. 
-#3. You must add an ouput layer (currently), as I have only created support for softmax + NLL as an output layer/loss combo. I will add support for binary cross entropy for sigmoid outputs.
-#4. TanH is within the library, but it is not tested/validated, so it may break the network. 
+- #1. You must add a input layer prior to any hidden layers. 
+- #2. You can add as many hidden layers as you want, ensure that features_in of l match the features_out of l-1. 
+- #3. You must add an ouput layer (currently), as I have only created support for softmax + NLL as an output layer/loss combo. I will add support for binary cross entropy for sigmoid outputs.
+- #4. TanH is within the library, but it is not tested/validated, so it may break the network. 
 
 
 
